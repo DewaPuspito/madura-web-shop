@@ -48,8 +48,8 @@ export default function Product() {
           className='border p-2 rounded-md'
         >
           {
-          categories.map((item) => (
-            <option>{item}</option>
+          categories.map((item, key) => (
+            <option key={key}>{item}</option>
           ))
         }
         </select>
@@ -60,8 +60,8 @@ export default function Product() {
           className='border p-2 rounded-md'
         >
           {
-          sortOptions.map((item) => (
-            <option>{item}</option>
+          sortOptions.map((item, key) => (
+            <option key={key}>{item}</option>
           ))
         }
         </select>        
@@ -69,9 +69,10 @@ export default function Product() {
     <div className='grid grid-cols-3 p-5'>
       {
         filteredProducts.length > 0 ?
-        filteredProducts.map((item: DataProduct) => {
+        filteredProducts.map((item: DataProduct, key: number) => {
           return (
             <Card
+              key={key}
               id={item.id}
               title={item.title}
               description={item.description}

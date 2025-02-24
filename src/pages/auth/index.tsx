@@ -10,14 +10,14 @@ export default function Login() {
     const [isLoading, setIsLoading] = useState<boolean>(false)
     const router = useRouter()
 
-    function handleLogin(e: any) {
+    function handleLogin(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault()
-
+    
         const data = {
             username: 'Dewaw',
             password: '12345678'
         }
-
+    
         if (data.username === username && data.password === password) {
             setIsLoading(true)
             setTimeout(() => {
@@ -28,7 +28,7 @@ export default function Login() {
             alert("login gagal, silahkan cek username atau password kamu")
         }
     }
-
+    
     return (
         <Layout>
             {
